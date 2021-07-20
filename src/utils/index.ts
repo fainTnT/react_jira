@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react'
 export const isFalsy = (value:unknown) => value === 0?false:!value
 
 export const cleanObject = (object:object) => {
-  const result = {...object}
+  const result:any = {...object}
   Object.keys(result).forEach(key => {
     const value = result[key]
     if(isFalsy(value)){
@@ -20,7 +20,7 @@ export const useMount = (callback:()=>void) => {
   },[])
 }
 
-export const useDebounce = (value:unknown,delay?:number) => {
+export const useDebounce = <T>(value:T,delay?:number):T => {
   const [debounceValue,setDebounceValue] = useState(value)
   useEffect(()=>{
     const timer = setTimeout(()=>{
