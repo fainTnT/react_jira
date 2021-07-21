@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ProjectList from './screens/project-list/index'
-import LoginScreen from './screens/login/login'
+import {LoginScreen} from './screens/login/login'
 function App() {
   return (
     <div className="App">
